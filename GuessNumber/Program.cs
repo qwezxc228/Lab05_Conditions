@@ -133,70 +133,194 @@
 //         break;
 // }
 
-Random random = new Random();
-int secret = random.Next(1, 101);
+// Random random = new Random();
+// int secret = random.Next(1, 101);
 
-int attempts = 0;
-bool guessed = false;
+// int attempts = 0;
+// bool guessed = false;
 
-Console.WriteLine("Угадай число (1-100)");
-Console.WriteLine("Я загадал число. Попробуй угадать!");
+// Console.WriteLine("Угадай число (1-100)");
+// Console.WriteLine("Я загадал число. Попробуй угадать!");
 
-while (!guessed) 
-{
-    Console.Write($"Попытка {attempts + 1}. Твой вариант: ");
-    string input = Console.ReadLine();
+// while (!guessed) 
+// {
+//     Console.Write($"Попытка {attempts + 1}. Твой вариант: ");
+//     string input = Console.ReadLine();
 
-    if (!int.TryParse(input, out int guess))
-    {
-        Console.WriteLine("!!! Введи целое число, а не текст!");
-        continue;
-    }
+//     if (!int.TryParse(input, out int guess))
+//     {
+//         Console.WriteLine("!!! Введи целое число, а не текст!");
+//         continue;
+//     }
 
-    if (guess < 1 || guess > 100)
-    {
-        Console.WriteLine("!!! Число должно быть от 1 до 100!");
-        continue;
-    }
+//     if (guess < 1 || guess > 100)
+//     {
+//         Console.WriteLine("!!! Число должно быть от 1 до 100!");
+//         continue;
+//     }
 
-    attempts++;
+//     attempts++;
 
-    if (guess < secret)
-    {
-        int diff = secret - guess;
-        string hint = GetHint(diff);
-        Console.WriteLine($"↑ Больше! {hint}\n");
-    }
-    else if (guess > secret)
-    {
-        int diff = guess - secret;
-        string hint = GetHint(diff);
-        Console.WriteLine($"↓ Меньше! {hint}\n");
-    }
-    else
-    {
-        guessed = true;
-    }
-}
+//     if (guess < secret)
+//     {
+//         int diff = secret - guess;
+//         string hint = GetHint(diff);
+//         Console.WriteLine($"↑ Больше! {hint}\n");
+//     }
+//     else if (guess > secret)
+//     {
+//         int diff = guess - secret;
+//         string hint = GetHint(diff);
+//         Console.WriteLine($"↓ Меньше! {hint}\n");
+//     }
+//     else
+//     {
+//         guessed = true;
+//     }
+// }
 
-string result = attempts <= 7
-    ? $"Отличный результат! Всего {attempts} попыток."
-    : $"Число найдено за {attempts} попыток. Можно лучше!";
+// string result = attempts <= 7
+//     ? $"Отличный результат! Всего {attempts} попыток."
+//     : $"Число найдено за {attempts} попыток. Можно лучше!";
 
-Console.WriteLine($"🎉 Правильно! Загаданное число: {secret}");
-Console.WriteLine(result);
+// Console.WriteLine($"🎉 Правильно! Загаданное число: {secret}");
+// Console.WriteLine(result);
 
-string GetHint(int difference) 
-{
-    switch (difference) 
-    {
-        case <= 3:
-            return "🔥 Горячо!";
-        case <= 10:
-            return "♨️ Тепло.";
-        case <= 25:
-            return "💧 Прохладно.";
-        default:
-            return "❄️ Холодно!";
-    }
-}
+// string GetHint(int difference) 
+// {
+//     switch (difference) 
+//     {
+//         case <= 3:
+//             return "🔥 Горячо!";
+//         case <= 10:
+//             return "♨️ Тепло.";
+//         case <= 25:
+//             return "💧 Прохладно.";
+//         default:
+//             return "❄️ Холодно!";
+//     }
+// }
+
+// Console.Write("Введите пароль: ");
+// string password = Console.ReadLine();
+
+// Console.Write("Подтвердите пароль: ");
+// string confirmPassword = Console.ReadLine();
+
+// if (password == confirmPassword)
+// {
+//     Console.WriteLine("Пароль принят");
+// }
+// else
+// {
+//     Console.WriteLine("Пароль не принят");
+// }
+
+// Console.Write("Введите ваш возраст: ");
+// int age = int.Parse(Console.ReadLine());
+
+// if (age >= 18)
+// {
+//     Console.WriteLine("Доступ разрешён");
+// }
+// else
+// {
+//     Console.WriteLine("Доступ запрещён");
+// }
+
+// Console.Write("Введите первое число: ");
+// double num1 = double.Parse(Console.ReadLine());
+
+// Console.Write("Введите второе число: ");
+// double num2 = double.Parse(Console.ReadLine());
+
+// Console.Write("Введите операцию (+, -, *, /): ");
+// string operation = Console.ReadLine();
+
+// switch (operation)
+// {
+//     case "+":
+//         Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
+//         break;
+//     case "-":
+//         Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
+//         break;
+//     case "*":
+//         Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
+//         break;
+//     case "/":
+//         if (num2 != 0)
+//         {
+//             Console.WriteLine($"{num1} / {num2} = {num1 / num2}");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Ошибка: деление на ноль!");
+//         }
+//         break;
+//     default:
+//         Console.WriteLine("Ошибка: неизвестная операция.");
+//         break;
+// }
+
+// Console.WriteLine("Введите три числа (каждое с новой строки):");
+
+// int num1 = int.Parse(Console.ReadLine());
+// int num2 = int.Parse(Console.ReadLine());
+// int num3 = int.Parse(Console.ReadLine());
+
+// int sum = 0;
+
+// if (num1 > 0) sum += num1;
+// if (num2 > 0) sum += num2;
+// if (num3 > 0) sum += num3;
+
+// Console.WriteLine($"Сумма положительных чисел: {sum}");
+
+// Console.WriteLine("Вы стоите перед первой дверью.");
+// Console.WriteLine("Путь А: Войти в комнату с огромным драконом.");
+// Console.WriteLine("Путь B: Пойти по тёмному коридору.");
+// Console.Write("Выберите путь (A или B): ");
+// string path = Console.ReadLine().Trim().ToUpper();
+
+// if (path == "A")
+// {
+//     Console.WriteLine("\nДракон говорит: \"Кто не дышит, но живёт; хоть не нужно — много пьёт; и в жизни, и в смерти тело как лёд.\"");
+//     Console.Write("Ваш ответ: ");
+//     string answer = Console.ReadLine().Trim().ToLower();
+
+//     if (answer == "рыба")
+//     {
+//         Console.WriteLine("Дракон открывает дверь в следующую комнату. Вы победили!");
+//     }
+//     else
+//     {
+//         Console.WriteLine("Неправильно! Дракон съел вас.");
+//     }
+// }
+// else if (path == "B")
+// {
+//     Console.WriteLine("\nВы в тёмной комнате с двумя дверями.");
+//     Console.WriteLine("Дверь 1: За ней скрыты сокровища Dungeon Master’а.");
+//     Console.WriteLine("Дверь 2: За ней — ловушка с ядовитыми шипами.");
+//     Console.Write("Какую дверь выберете? (1 или 2): ");
+//     string door = Console.ReadLine().Trim();
+
+//     if (door == "1")
+//     {
+//         Console.WriteLine("Вы нашли сокровища Dungeon Master’а! Победа!");
+//     }
+//     else if (door == "2")
+//     {
+//         Console.WriteLine("Вы попали в ловушку с ядовитыми шипами. Игра окончена.");
+//     }
+//     else
+//     {
+//         Console.WriteLine("Вы замешкались и не выбрали дверь. Тьма поглотила вас.");
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("Вы не смогли выбрать путь и остались стоять на месте.");
+// }
+
